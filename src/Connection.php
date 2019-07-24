@@ -29,6 +29,14 @@ class Connection
         }
     }
 
+    private function requestRaw($method, array $params = [])
+    {
+        $client = new Client();
+
+        return $client->request('GET', $this->buildUrl($method) . $this->buildParams($params), ['connect_timeout' => 5]);
+
+    }
+
     public function request($method, array $params = [])
     {
         $request = $this->requestRaw($method, $params);
@@ -36,14 +44,6 @@ class Connection
             $request
                 ->getBody()
                 ->getContents(), true);
-    }
-
-    private function requestRaw($method, array $params = [])
-    {
-        $client = new Client();
-
-        return $client->request('GET', $this->buildUrl($method) . $this->buildParams($params));
-
     }
 
     private function buildUrl($method)
