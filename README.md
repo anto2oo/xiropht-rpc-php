@@ -1,4 +1,4 @@
-# xiropht-php
+# xiropht-rpc-php
 
 ## Description
 This package provides a wrapper around the Xiropht RPC to manage Xiropht wallets.
@@ -19,7 +19,7 @@ Add this to your ```composer.json``` file :
 
 Then just run :
 ```bash
-composer require ateros/xiropht-rpc-php
+composer require ateros/xiropht-rpc-php:"dev-master"
 ```
 
 ## Usage
@@ -40,4 +40,4 @@ To create a new wallet, pass the ```Connection``` object as the first parameter 
 $wallet = new Wallet($rpc);
 ```
 
-You can then start sending operations to the wallet. See available methods in the documentation.
+You can then start sending operations to the wallet. See available methods in the [documentation](https://github.com/anto2oo/xiropht-rpc-php/wiki).
